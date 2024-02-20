@@ -226,7 +226,6 @@ def draw_defects(
     color_defect = (0, 255, 255)
     for zona in zones:
         if zona.defect:
-
             cv2.circle(img, contour[zona.index[0]][0].tolist(), radius=3, color=color_defect, thickness=-1)
             cv2.circle(img, contour[zona.index[1]][0].tolist(), radius=3, color=color_defect, thickness=-1)
             # cv2.line(img=img,
@@ -234,7 +233,8 @@ def draw_defects(
             #          pt2=(contour[zona.index[1]][0].tolist()),
             #          color=color_defect,
             #          thickness=1)
-            cv2.polylines(img=img, pts=[contour[zona.index[0]:zona.index[1]]] ,isClosed=False,color=color_defect ,thickness=1)
+            cv2.polylines(img=img, pts=[contour[zona.index[0]:zona.index[1]]], isClosed=False, color=color_defect,
+                          thickness=1)
 
 
 def detect_defect(
@@ -263,7 +263,7 @@ def detect_defect(
 
         x = np.arange(0, len(sign))
         plt.plot(signature_norm)
-        plt.plot(x[idx], np.array(signature_norm)[idx],"ro")
+        plt.plot(x[idx], np.array(signature_norm)[idx], "ro")
         plt.grid()
         plt.show()
 
