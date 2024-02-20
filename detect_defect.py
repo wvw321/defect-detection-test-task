@@ -289,7 +289,6 @@ def parse_opt():
     parser.add_argument(
         "-v", "--visualize",
         action='store_true',
-        help="contour_extraction_method"
     )
 
     return parser.parse_args()
